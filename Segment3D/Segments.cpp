@@ -53,14 +53,14 @@ std::optional<Vector3D> Intersect(const Segment3D& seg1, const Segment3D& seg2) 
     double denominator = a * c - b * b;
 
     if (denominator == 0.0) {
-        return std::nullopt; // Отрезки параллельны
+        return std::nullopt; 
     }
 
     double s = (b * e - c * d) / denominator;
     double t = (a * e - b * d) / denominator;
 
     if (s < 0.0 || s > 1.0 || t < 0.0 || t > 1.0) {
-        return std::nullopt; // Отрезки не пересекаются в пределах своих длин
+        return std::nullopt; 
     }
 
     Vector3D intersection = seg1.start + u * s;
